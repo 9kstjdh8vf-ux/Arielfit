@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>אימון אישי עם אריאל | אימון ניסיון ב-150</title>
+<meta name="description" content="אימון אישי וזוגי עם אריאל. אימון ניסיון ב-150 ש&quot;ח.">
+<meta name="theme-color" content="#F3F4F8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F3F4F8; --ink:#0C1324; --blue:#2D3BFF; --lemon:#E8FF5A;
+  --mute:#5E687C; --line:#E1E4EC; --white:#fff;
+  --r-lg:32px; --r-md:22px; --r-sm:14px;
+  --font:"Rubik","Arial Hebrew",Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font:400 17px/1.55 var(--font);background:var(--bg);color:var(--ink);padding-bottom:96px}
+.wrap{max-width:560px;margin-inline:auto;padding-inline:16px}
+h1,h2,h3{font-weight:800;line-height:1.1;letter-spacing:-.01em}
+h2{font-size:1.9rem;margin-bottom:6px}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+[hidden]{display:none!important}
+section{padding-block:28px}
+.lead-in{color:var(--mute);margin-bottom:20px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:700 1.05rem var(--font);
+  padding:16px 26px;border-radius:99px;border:0;cursor:pointer;text-decoration:none;
+  background:var(--lemon);color:var(--ink);transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px -10px rgba(12,19,36,.5)}
+.btn:active{transform:translateY(0)}
+.btn.dark{background:var(--ink);color:#fff}
+.btn.ghost{background:rgba(255,255,255,.16);color:#fff}
+.btn.block{display:flex;width:100%}
+
+/* hero */
+.hero{margin:12px;border-radius:var(--r-lg);background:var(--blue);color:#fff;
+  padding:22px 22px 30px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;width:340px;height:340px;border-radius:50%;
+  background:#4A57FF;inset-inline-start:-140px;bottom:-190px;z-index:0}
+.hero>*{position:relative;z-index:1}
+.who{display:flex;align-items:center;gap:12px}
+.avatar{width:46px;height:46px;border-radius:50%;background:var(--lemon);color:var(--ink);
+  display:grid;place-items:center;font-weight:800;font-size:1.25rem}
+.who b{display:block;font-weight:700;line-height:1.2}
+.who small{opacity:.8;font-size:.88rem;direction:ltr;unicode-bidi:plaintext}
+.hero h1{font-size:clamp(2.4rem,11vw,3.4rem);margin:44px 0 14px;max-width:11ch}
+.hero .sub{font-size:1.1rem;opacity:.9;max-width:30ch;margin-bottom:26px}
+.cta-row{display:flex;flex-wrap:wrap;gap:10px}
+.sticker{position:absolute!important;inset-inline-end:18px;top:78px;width:104px;height:104px;border-radius:50%;
+  background:var(--lemon);color:var(--ink);display:grid;place-content:center;text-align:center;
+  transform:rotate(-10deg);font-weight:800;line-height:1.05}
+.sticker small{display:block;font-weight:500;font-size:.72rem;margin-bottom:2px}
+.sticker b{font-size:1.9rem}
+.spots{display:inline-flex;align-items:center;gap:8px;margin-top:22px;font-size:.92rem;font-weight:500;opacity:.95}
+.spots i{width:9px;height:9px;border-radius:50%;background:var(--lemon);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.25}}
+
+/* packages */
+.tabs{display:grid;grid-template-columns:1fr 1fr;background:#E4E7F0;border-radius:99px;padding:5px;margin-bottom:14px}
+.vh{position:absolute;opacity:0;pointer-events:none;width:1px;height:1px}
+.tabs label{font-weight:700;text-align:center;padding:12px;border-radius:99px;color:var(--mute);cursor:pointer;
+  -webkit-tap-highlight-color:transparent;user-select:none}
+#r-solo:checked ~ .tabs label[for="r-solo"],
+#r-duo:checked ~ .tabs label[for="r-duo"]{background:var(--white);color:var(--ink);box-shadow:0 2px 8px rgba(12,19,36,.12)}
+#r-solo:focus-visible ~ .tabs label[for="r-solo"],
+#r-duo:focus-visible ~ .tabs label[for="r-duo"]{outline:3px solid var(--blue);outline-offset:2px}
+#p-duo{display:none}
+#r-duo:checked ~ #p-solo{display:none}
+#r-duo:checked ~ #p-duo{display:grid}
+.plans{display:grid;gap:10px}
+.plan{background:var(--white);border-radius:var(--r-md);padding:18px 20px;display:grid;grid-template-columns:1fr auto;gap:2px 14px;align-items:center}
+.plan h3{font-size:1.15rem}
+.plan p{grid-column:1;color:var(--mute);font-size:.93rem}
+.plan .price{grid-column:2;grid-row:1/3;font-weight:800;font-size:1.7rem;letter-spacing:-.02em}
+.plan .price small{font-size:1rem;font-weight:500;margin-inline-end:2px}
+.plan.best{background:var(--ink);color:#fff}
+.plan.best p{color:#B8C0D4}
+.plan.best .price{color:var(--lemon)}
+.tag{display:inline-block;background:var(--lemon);color:var(--ink);font-size:.74rem;font-weight:700;padding:3px 10px;border-radius:99px;margin-bottom:6px}
+.extra{margin-top:10px;background:var(--white);border-radius:var(--r-md);padding:20px;display:grid;gap:4px;
+  border:2px dashed var(--line)}
+.extra .row{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.extra h3{font-size:1.15rem}
+.extra .price{font-weight:800;font-size:1.5rem}
+.extra p{color:var(--mute);font-size:.93rem}
+
+/* how */
+.bento{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tile{border-radius:var(--r-md);padding:20px;min-height:170px;display:flex;flex-direction:column;justify-content:space-between}
+.tile .n{font-weight:800;font-size:2.2rem;line-height:1}
+.tile b{font-size:1.15rem;display:block;margin-bottom:4px}
+.tile span{font-size:.93rem;opacity:.85;line-height:1.4;display:block}
+.tile.t1{background:var(--lemon)}
+.tile.t2{background:var(--white)}
+.tile.t3{grid-column:1/-1;background:var(--blue);color:#fff;min-height:140px}
+
+/* form */
+.panel{background:var(--ink);color:#fff;border-radius:var(--r-lg);padding:28px 22px}
+.panel h2{margin-bottom:6px}
+.panel .lead-in{color:#B8C0D4}
+form{display:grid;gap:14px}
+.field label{display:block;font-weight:500;margin-bottom:6px;font-size:.95rem;color:#D5DAE8}
+.field input{width:100%;font:inherit;font-size:1.05rem;padding:16px 18px;border-radius:var(--r-sm);
+  border:2px solid transparent;background:#1A2340;color:#fff}
+.field input::placeholder{color:#6F7A97}
+.field input:focus{border-color:var(--lemon);outline:0}
+.field input[aria-invalid="true"]{border-color:#FF6B6B}
+.err{color:#FF9A9A;font-size:.9rem;margin-top:4px;min-height:1.2em}
+.fine{font-size:.88rem;color:#8C97B4;text-align:center}
+.done{display:grid;gap:14px}
+.done h3{font-size:1.6rem;color:var(--lemon)}
+
+/* faq */
+.faq{display:grid;gap:8px}
+details{background:var(--white);border-radius:var(--r-md);padding:18px 20px}
+summary{font-weight:700;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";width:30px;height:30px;border-radius:50%;background:var(--bg);display:grid;place-items:center;font-size:1.25rem;flex:none}
+details[open] summary::after{content:"\2212";background:var(--lemon)}
+details p{margin-top:10px;color:var(--mute)}
+
+footer{padding:26px 0 8px;text-align:center;color:var(--mute);font-size:.88rem}
+
+/* sticky bar */
+.bar{position:fixed;inset-inline:0;bottom:0;padding:0 16px calc(14px + env(safe-area-inset-bottom));
+  transition:transform .25s,opacity .25s;pointer-events:none}
+.bar .btn{display:flex;max-width:420px;margin:auto;background:var(--ink);color:#fff;pointer-events:auto;
+  box-shadow:0 14px 30px -10px rgba(12,19,36,.55)}
+.bar .btn b{background:var(--lemon);color:var(--ink);border-radius:99px;padding:3px 12px;font-size:.9rem}
+.bar.off{transform:translateY(120%);opacity:0}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}.spots i{animation:none}.bar,.btn{transition:none}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="who">
+    <span class="avatar" data-bind="initial" aria-hidden="true"></span>
+    <div>
+      <b data-bind="trainerName"></b>
+      <small>@<span data-bind="handle"></span></small>
+    </div>
+  </div>
+  <div class="sticker" aria-hidden="true"><small>אימון ניסיון</small><b>₪150</b></div>
+  <h1>אימון אישי שמתאים לך.</h1>
+  <p class="sub">תוכנית מותאמת וליווי צמוד, בקצב שלך.</p>
+  <div class="cta-row">
+    <a class="btn" href="#build">קבע אימון ניסיון</a>
+    <a class="btn ghost" href="#packs">חבילות</a>
+  </div>
+  <p class="spots"><i aria-hidden="true"></i>נשארו <span data-bind="spotsLeft"></span> מקומות החודש</p>
+</header>
+
+<main>
+<section id="packs">
+  <div class="wrap">
+    <h2>חבילות ומחירים</h2>
+    <p class="lead-in">בלי התחייבות. אפשר להתחיל באימון ניסיון.</p>
+
+    <input type="radio" name="kind" id="r-solo" class="vh" checked>
+    <input type="radio" name="kind" id="r-duo" class="vh">
+    <div class="tabs">
+      <label for="r-solo">אישי</label>
+      <label for="r-duo">זוגי</label>
+    </div>
+
+    <div class="plans" id="p-solo">
+      <div class="plan"><h3>אימון ניסיון</h3><span class="price"><small>₪</small>150</span><p>היכרות, הערכת מצב ואימון ראשון.</p></div>
+      <div class="plan"><h3>אימון בודד</h3><span class="price"><small>₪</small>220</span><p>אימון אחד, בלי התחייבות.</p></div>
+      <div class="plan"><h3>5 אימונים</h3><span class="price"><small>₪</small>1,000</span><p>₪200 לאימון.</p></div>
+      <div class="plan best"><div><span class="tag">הכי משתלם</span><h3>10 אימונים</h3></div><span class="price"><small>₪</small>1,900</span><p>₪190 לאימון.</p></div>
+    </div>
+
+    <div class="plans" id="p-duo">
+      <div class="plan"><h3>אימון בודד</h3><span class="price"><small>₪</small>400</span><p>לשניכם יחד.</p></div>
+      <div class="plan"><h3>5 אימונים</h3><span class="price"><small>₪</small>1,750</span><p>₪350 לאימון.</p></div>
+      <div class="plan best"><div><span class="tag">הכי משתלם</span><h3>10 אימונים</h3></div><span class="price"><small>₪</small>3,000</span><p>₪300 לאימון.</p></div>
+    </div>
+
+    <div class="extra">
+      <div class="row"><h3>תוכנית ומעבר עליה</h3><span class="price">₪220</span></div>
+      <p>תוכנית כתובה שמתאימה לך, ושיחה שבה אנחנו עוברים עליה יחד.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>איך זה עובד</h2>
+    <p class="lead-in">שלושה צעדים, בלי סיבוכים.</p>
+    <div class="bento">
+      <div class="tile t1"><span class="n">1</span><div><b>שיחת היכרות</b><span>10 דקות. מטרה, פציעות וזמן פנוי.</span></div></div>
+      <div class="tile t2"><span class="n">2</span><div><b>תוכנית כתובה</b><span>כל אימון מפורט, עם סרטוני הדגמה.</span></div></div>
+      <div class="tile t3"><span class="n">3</span><div><b>מתאמנים ומתעדכנים</b><span>מעקב שבועי והתאמות בזמן אמת. אתה אף פעם לא לבד.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="build">
+  <div class="wrap">
+    <div class="panel">
+      <div id="leadBox">
+        <h2>בוא נתחיל</h2>
+        <p class="lead-in">השאר שם וטלפון, ואחזור אליך בוואטסאפ לקביעת אימון ניסיון.</p>
+        <form id="lead" novalidate>
+          <div class="field">
+            <label for="fname">שם</label>
+            <input id="fname" name="name" autocomplete="given-name" required>
+            <div class="err" id="nameErr" role="alert"></div>
+          </div>
+          <div class="field">
+            <label for="fphone">טלפון</label>
+            <input id="fphone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="050-1234567" required>
+            <div class="err" id="phoneErr" role="alert"></div>
+          </div>
+          <button class="btn block" type="submit">קבע אימון ניסיון בוואטסאפ</button>
+          <p class="fine">בלי התחייבות. הפרטים שלך נשארים אצלי בלבד.</p>
+        </form>
+      </div>
+      <div class="done" id="done" hidden>
+        <h3>מעולה, <span id="doneName"></span>!</h3>
+        <p>אני פותח לך את וואטסאפ עם ההודעה מוכנה. אם זה לא נפתח, לחץ כאן:</p>
+        <a class="btn block" id="waLink" href="#" target="_blank" rel="noopener">פתח וואטסאפ</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:8px">
+  <div class="wrap">
+    <h2 style="margin-bottom:16px">שאלות נפוצות</h2>
+    <div class="faq">
+      <details><summary>אני מתחיל לגמרי, זה מתאים לי?</summary><p>כן. רוב המתאמנים שלי התחילו מאפס. התוכנית נבנית לפי הרמה שלך היום.</p></details>
+      <details><summary>יש לי פציעה או הגבלה רפואית</summary><p>ספר לי בשיחת ההיכרות, ואתאים את התרגילים. במקרים מסוימים אבקש אישור מרופא.</p></details>
+      <details><summary>אפשר להתאמן אונליין?</summary><p>כן. אפשר אימונים אישיים פנים אל פנים או ליווי מרחוק עם תוכנית וסרטוני הדגמה.</p></details>
+      <details><summary>כמה זמן עד שרואים תוצאות?</summary><p>שינוי בכוח ובאנרגיה מורגש בדרך כלל אחרי 3 עד 4 שבועות. שינוי בגוף לוקח קצת יותר, וזה תלוי בעקביות.</p></details>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><p>© <span data-bind="trainerName"></span>. כל הזכויות שמורות.</p></div></footer>
+
+<div class="bar off" id="bar"><a class="btn" href="#build">קבע אימון ניסיון <b>₪150</b></a></div>
+
+<script>
+/* ===== הגדרות: לערוך כאן ===== */
+const CONFIG = {
+  trainerName: "אריאל",
+  handle: "Ariel_shsh",
+  whatsapp: "972584115815",   // מספר בפורמט בינלאומי, בלי + ובלי 0 בהתחלה
+  spotsLeft: 4,
+  formEndpoint: ""            // אופציונלי: כתובת (Google Sheets / Zapier / Make) לקבלת הלידים
+};
+
+const $ = s => document.querySelector(s);
+const bind = {...CONFIG, initial: CONFIG.trainerName.trim()[0]};
+document.querySelectorAll("[data-bind]").forEach(el => el.textContent = bind[el.dataset.bind]);
+
+/* ===== שליחה ===== */
+const normPhone = p => {
+  let d = p.replace(/\D/g,"");
+  if (d.startsWith("972")) d = "0" + d.slice(3);
+  return d;
+};
+const validPhone = d => /^0(5\d{8}|[23489]\d{7})$/.test(d);
+
+function source(){
+  const q = new URLSearchParams(location.search);
+  if (q.get("utm_source")) return q.get("utm_source");
+  return /instagram/i.test(document.referrer) || /instagram/i.test(navigator.userAgent) ? "instagram" : "direct";
+}
+
+$("#lead").addEventListener("submit", e => {
+  e.preventDefault();
+  const name = $("#fname").value.trim();
+  const phone = normPhone($("#fphone").value);
+
+  const nameBad = name.length < 2;
+  $("#fname").setAttribute("aria-invalid", nameBad);
+  $("#nameErr").textContent = nameBad ? "כתוב את השם שלך." : "";
+  const phoneBad = !validPhone(phone);
+  $("#fphone").setAttribute("aria-invalid", phoneBad);
+  $("#phoneErr").textContent = phoneBad ? "מספר הטלפון לא תקין. לדוגמה: 050-1234567" : "";
+  if (nameBad || phoneBad) { (nameBad ? $("#fname") : $("#fphone")).focus(); return; }
+
+  const lead = { name, phone, source: source(), at: new Date().toISOString() };
+  if (CONFIG.formEndpoint) {
+    try { fetch(CONFIG.formEndpoint, { method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify(lead), keepalive:true, mode:"no-cors" }); } catch(_){}
+  }
+
+  const msg = `היי ${CONFIG.trainerName}, אני ${name}. אשמח לקבוע אימון ניסיון. הטלפון שלי ${phone}.`;
+  const url = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`;
+
+  $("#doneName").textContent = name;
+  $("#waLink").href = url;
+  $("#leadBox").hidden = true;
+  $("#done").hidden = false;
+  $("#done").scrollIntoView({block:"center"});
+  setTimeout(() => window.open(url, "_blank", "noopener"), 600);
+});
+
+/* ===== כפתור צף: מוסתר כשהטופס בתצוגה ===== */
+const bar = $("#bar");
+new IntersectionObserver(([en]) => bar.classList.toggle("off", en.isIntersecting), {threshold:.2})
+  .observe($("#build"));
+</script>
+</body>
+</html>
